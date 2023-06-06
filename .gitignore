@@ -1,0 +1,7 @@
+# Terraform
+.terraform
+*.tfstate
+terraform.tfstate.backup
+*.tfvars
+*.tfplan
+variables.json
