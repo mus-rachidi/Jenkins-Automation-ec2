@@ -16,24 +16,14 @@ chmod +x run.sh
 ```
 ./run.sh
 ```
-## Installation ansible
+
+Terraform will perform the actions described above.
+Only 'yes' will be accepted to approve.
+
+Enter a value: yes
+
+## Installation ansible and terraform
 
 https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html
 
-## Usage
-
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
-
-```
-```
+https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
