@@ -1,12 +1,23 @@
 resource "aws_instance" "example" {
-  ami           = "ami-053b0d53c279acc90"   # Replace with the desired AMI ID
+  ami           = "ami-06935448000742e6b"   # Replace with the desired AMI ID
   instance_type = "t2.micro"                 # Replace with the desired instance type
   key_name = var.KEY_NAME
   tags = {
     Name = var.TAGE_NAME
   }
+  # associate_public_ip_address = false
   vpc_security_group_ids = [aws_security_group.example.id]  # Provide the security group ID here
 }
+
+# resource "aws_eip" "example" {
+#   instance = aws_instance.example.id
+#   vpc      = true
+# }
+
+# resource "aws_eip_association" "example" {
+#   instance_id   = aws_instance.example.id
+#   allocation_id = aws_eip.example.id
+# }
 
 resource "aws_security_group" "example" {
   name        = "ec2-security-group"

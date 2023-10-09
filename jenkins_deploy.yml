@@ -25,7 +25,7 @@
         state: present
 
     - name: Install Docker
-      apt:
+      apt:  
         name: docker-ce
         state: present
 
@@ -59,6 +59,7 @@
 
     - name: run Jenkins container
       command: docker-compose up --build -d
- 
- 
+  
+
+    
 

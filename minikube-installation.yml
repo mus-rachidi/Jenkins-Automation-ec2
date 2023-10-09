@@ -1,0 +1,18 @@
+---
+- name: Install Minikube on EC2
+  hosts: jenkins_servers
+  become: yes
+  tasks:
+    - name: Install dependencies
+      yum:
+        name: ['docker', 'conntrack', 'socat', 'ebtables']
+        state: present
+
+    - name: Install Minikube
+      shell: curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+    - name: Start Minikube
+      shell: minikube start --driver=docker
+
+    - name: Configure kubectl
+      shell: minikube kubectl -- get po -A

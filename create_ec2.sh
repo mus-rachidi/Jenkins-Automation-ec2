@@ -4,7 +4,7 @@
 echo "Deploying infrastructure with Terraform..."
 cd ec2-terraform
 terraform init
-terraform apply -var-file=env_vars.tfvars
+terraform apply -auto-approve -var-file=env_vars.tfvars 
 
 
 
